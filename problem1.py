@@ -23,7 +23,7 @@ for data in time_ip_ping:
                 if data[2] != '-':
                     start_failure = datetime.datetime.strptime(trouble_data[0], '%Y%m%d%H%M%S')
                     end_failure = datetime.datetime.strptime(data[0], '%Y%m%d%H%M%S')
-                    print("IP address:", data[1], ", failure time:", end_failure-start_failure, ', start:', start_failure, ', end:', end_failure)
+                    print("failure time:", end_failure-start_failure, ", IP address:", data[1],  ', start:', start_failure, ', end:', end_failure)
                     del trouble[index]
 
     #タイムアウトの検知

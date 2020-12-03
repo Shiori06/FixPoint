@@ -1,5 +1,8 @@
 #パラメータで与えられるようにする
 import datetime
+import sys
+
+args = sys .argv
 
 f = open('monitoring.log', 'r')
 
@@ -8,8 +11,10 @@ time_ip_ping = []
 trouble = []
 trouble_candidate = []
 
-
+#N回タイムアウトで故障
 N = 3
+if len(args)>1:
+    N = int(args[1])
 
 #時刻,IP,応答時間に分ける
 for data in datalist:
@@ -27,7 +32,7 @@ for data in time_ip_ping:
                 if data[2] != '-':
                     start_failure = datetime.datetime.strptime(trouble_data[0], '%Y%m%d%H%M%S')
                     end_failure = datetime.datetime.strptime(data[0], '%Y%m%d%H%M%S')
-                    print("IP address:", data[1], ", failure time:", end_failure-start_failure, ', start:', start_failure, ', end:', end_failure)
+                    print("failure time:", end_failure-start_failure, ", IP address:", data[1], ', start:', start_failure, ', end:', end_failure)
                     del trouble[index]
 
     #すでに故障候補のサーバが1つでもあれば
