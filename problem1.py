@@ -1,4 +1,3 @@
-#最後の改行文字たちを消したい
 import datetime
 
 f = open('monitoring.log', 'r')

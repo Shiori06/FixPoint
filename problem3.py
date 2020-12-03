@@ -1,10 +1,9 @@
-#平均応答時間を求めるときのハイフンの扱い
-#dataframeの行数がm以上なら...を追加
-#直近m回のうちどれを過負荷状態の開始/終了とするか
-#過負荷状態が終わっていないときに出力されない問題
 import datetime
+import sys
 import math
 import pandas as pd
+
+args = sys .argv
 
 f = open('monitoring.log', 'r')
 
@@ -24,6 +23,12 @@ N = 3
 #直近m回の平均応答時間tミリ秒
 m = 2
 t = 30
+
+if len(args)>1:
+    N = int(args[1])
+if len(args)>3:
+    m = int(args[2])
+    t = int(args[3])
 
 #時刻,IP,応答時間に分ける
 for data in datalist:
@@ -48,7 +53,7 @@ for data in time_ip_ping:
                 if data[2] != '-':
                     start_failure = datetime.datetime.strptime(trouble_data[0], '%Y%m%d%H%M%S')
                     end_failure = datetime.datetime.strptime(data[0], '%Y%m%d%H%M%S')
-                    print("IP address:", data[1], ", failure time:", end_failure-start_failure, ', start:', start_failure, ', end:', end_failure)
+                    print("failure time:", end_failure-start_failure, " IP address:", data[1], ', start:', start_failure, ', end:', end_failure)
                     del trouble[index]
 
     #すでに故障候補のサーバが1つでもあれば
@@ -116,6 +121,6 @@ for responsetime_data in responsetime_list:
             overload_flag = 0
             start_overload = datetime.datetime.strptime(overload_data.loc[0, "time"], '%Y%m%d%H%M%S')
             end_overload = datetime.datetime.strptime(responsetime_data["time"][index], '%Y%m%d%H%M%S')
-            print("IP adress:", responsetime_data["ip"][0], ", overload condition time:", end_overload-start_overload,  ", start:", start_overload, ", end:", end_overload)
+            print("overload condition time:", end_overload-start_overload, ", IP adress:", responsetime_data["ip"][0], ", start:", start_overload, ", end:", end_overload)
 
 f.close()

@@ -1,4 +1,3 @@
-#パラメータで与えられるようにする
 import datetime
 import sys
 
