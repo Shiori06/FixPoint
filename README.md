@@ -8,7 +8,7 @@
 テストデータ→monitoring.log  
 
 ## 実行環境
-macOS Catalina 10.15.7
+macOS Catalina 10.15.7  
 python 3.9.0
 
 ## 実行方法
