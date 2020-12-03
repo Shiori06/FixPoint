@@ -18,6 +18,8 @@
 このときN=3, m=2, t=30となる。  
 
 ## 出力のフォーマット
+    failure time: 故障期間(hh:mm:ss)  IP address: 故障しているサーバアドレス , start: 故障開始時間(yyyy-mm-dd hh:mm:ss) , end: 故障終了時間(yyyy-mm-dd hh:mm:ss)
+    overload condition time: 過負荷状態期間(hh:mm:ss) , IP adress: 過負荷状態のサーバアドレス , start: 過負荷状態開始時間(yyyy-mm-dd hh:mm:ss), end: 過負荷状態終了時間(yyyy-mm-dd hh:mm:ss)
 
 ## 仕様と今後の課題
 * 平均応答時間を求める際、タイムアウトした行を飛ばして求めている。  
