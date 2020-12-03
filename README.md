@@ -4,8 +4,12 @@
 設問1→problem1.py  
 設問2→problem2.py  
 設問3→problem3.py  
-設問4→problem4.py  
+設問4(未完成)→problem4.py  
 テストデータ→monitoring.log  
+
+## 実行環境
+macOS Catalina 10.15.7
+python 3.9.0
 
 ## 実行方法
 テストデータとpythonファイルを同じフォルダに置き、コマンドライン上で 
@@ -20,6 +24,7 @@
 ## 出力のフォーマット
     failure time: 故障期間(hh:mm:ss)  IP address: 故障しているサーバアドレス , start: 故障開始時間(yyyy-mm-dd hh:mm:ss) , end: 故障終了時間(yyyy-mm-dd hh:mm:ss)
     overload condition time: 過負荷状態期間(hh:mm:ss) , IP adress: 過負荷状態のサーバアドレス , start: 過負荷状態開始時間(yyyy-mm-dd hh:mm:ss), end: 過負荷状態終了時間(yyyy-mm-dd hh:mm:ss)
+    
 
 ## 仕様と今後の課題
 * 平均応答時間を求める際、タイムアウトした行を飛ばして求めている。  
