@@ -6,6 +6,7 @@
 設問3→problem3.py  
 設問4(未完成)→problem4.py  
 テストデータ→monitoring.log  
+実行結果→実行結果.txt
 
 ## 実行環境
 macOS Catalina 10.15.7  
