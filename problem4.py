@@ -1,10 +1,9 @@
-#平均応答時間を求めるときのハイフンの扱い
-#dataframeの行数がm以上なら...を追加
-#直近m回のうちどれを過負荷状態の開始/終了とするか
-#過負荷状態が終わっていないときに出力されない問題
 import datetime
+import sys
 import math
 import pandas as pd
+
+args = sys .argv
 
 f = open('monitoring.log', 'r')
 
@@ -30,6 +29,13 @@ N = 3
 #直近m回の平均応答時間tミリ秒
 m = 2
 t = 30
+
+if len(args)>1:
+    N = int(args[1])
+if len(args)>3:
+    m = int(args[2])
+    t = int(args[3])
+
 
 #時刻,IP,応答時間に分ける
 for data in datalist:
@@ -166,7 +172,7 @@ for data in time_ip_ping:
                         subnet_failure_data["timeout"] = 0
                         subnet_failure_data["time"] = ""
                         
-                        
+
 #タイムアウトしている行を削除
 drop_index = df_time_ip_ping.index[df_time_ip_ping['ping']=='-']
 df_ping = df_time_ip_ping.drop(drop_index)

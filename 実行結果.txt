@@ -1,0 +1,37 @@
+#設問1
+$ python problem1.py 
+failure time: 0:01:00 , IP address: 192.168.1.1/24 , start: 2020-10-19 13:33:34 , end: 2020-10-19 13:34:34
+failure time: 0:03:00 , IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+failure time: 0:02:09 , IP address: 10.20.30.2/16 , start: 2020-10-19 13:34:16 , end: 2020-10-19 13:36:25
+
+#設問2
+#N=2のとき
+$ python problem2.py 2 
+failure time: 0:03:00 , IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+failure time: 0:02:09 , IP address: 10.20.30.2/16 , start: 2020-10-19 13:34:16 , end: 2020-10-19 13:36:25
+#N=3のとき
+$ python problem2.py 3 
+failure time: 0:03:00 , IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+
+#設問3
+#N=3, m=2, t=30
+$ python problem3.py 3 2 30
+failure time: 0:03:00  IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+overload condition time: 0:05:00 , IP adress: 10.20.30.1/16 , start: 2020-10-19 13:31:24 , end: 2020-10-19 13:36:24
+overload condition time: 0:01:58 , IP adress: 192.168.1.2/24 , start: 2020-10-19 13:33:35 , end: 2020-10-19 13:35:33
+#N=2, m=3, t=40
+$ python problem3.py 2 3 40
+failure time: 0:03:00  IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+failure time: 0:02:09  IP address: 10.20.30.2/16 , start: 2020-10-19 13:34:16 , end: 2020-10-19 13:36:25
+overload condition time: 0:02:58 , IP adress: 192.168.1.2/24 , start: 2020-10-19 13:32:35 , end: 2020-10-19 13:35:33
+
+#設問4
+#N=2, m=3, t=40
+$ python problem4.py 2 3 40
+subnet failure: 0b1010000101000000000000000000 start: 20201019133414
+subnet failure: 0b1010000101000000000000000000 start: 20201019133414
+subnet failure: 0b1010000101000000000000000000 start: 20201019133414
+failure time: 0:03:00 , IP address: 10.20.30.1/16 , start: 2020-10-19 13:33:24 , end: 2020-10-19 13:36:24
+subnet failure: 0b1010000101000000000000000000 start: 20201019133414
+failure time: 0:02:09 , IP address: 10.20.30.2/16 , start: 2020-10-19 13:34:16 , end: 2020-10-19 13:36:25
+overload condition time: 0:02:58 ,ip address: 192.168.1.2/24 start: 2020-10-19 13:32:35 end: 2020-10-19 13:35:33
